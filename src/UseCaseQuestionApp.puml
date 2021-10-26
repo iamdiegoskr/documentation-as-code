@@ -1,0 +1,37 @@
+@startuml
+
+'https://plantuml.com/use-case-diagram
+
+title "Casos de uso"
+
+skinparam actorStyle awesome
+
+left to right direction
+
+actor :Usuario logueado: as userAutenticado
+
+actor :Usuario no logueado: as userNoAutenticado
+
+package PreguntasyRespuestas {
+    usecase "Añadir una respuesta a una pregunta" as UC1
+    usecase "Eliminar una respuesta" as UC2
+    usecase "Crear una pregunta" as UC3
+    usecase "Eliminar una pregunta" as UC4
+    usecase "Listar preguntas y respuestas" as UC5
+    usecase "Listar preguntas propias" as UC6
+    usecase "Actualizar pregunta" as UC7
+    usecase "Actualizar respuesta" as UC8
+}
+
+userAutenticado --> UC1
+userAutenticado --> UC2
+userAutenticado --> UC3
+userAutenticado --> UC4
+userAutenticado --> UC5
+userAutenticado --> UC6
+userAutenticado --> UC7
+userAutenticado --> UC8
+
+userNoAutenticado --> UC5
+
+@enduml
